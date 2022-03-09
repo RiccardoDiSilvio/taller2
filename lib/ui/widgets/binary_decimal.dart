@@ -46,10 +46,10 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
               child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Expanded(flex: 10, child: binaryKeyNumber(1)),
+                    Expanded(flex: 10, child: binaryKeyNumber("1")),
                     Expanded(
                         child: Padding(padding: const EdgeInsets.all(2.0))),
-                    Expanded(flex: 10, child: binaryKeyNumber(0)),
+                    Expanded(flex: 10, child: binaryKeyNumber("0")),
                   ]),
             ),
             Expanded(
@@ -59,6 +59,7 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
                   height: double.infinity,
                   padding: const EdgeInsets.all(8.0),
                   child: MaterialButton(
+                      key: Key("reset"),
                       color:
                           Color(int.parse("#0069C0".replaceAll('#', '0xff'))),
                       onPressed: () {
@@ -79,6 +80,7 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
 
   Widget binaryKeyNumber(number) {
     return MaterialButton(
+      key: Key(number),
       color: Color(int.parse("#2FE058".replaceAll('#', '0xff'))),
       child: Text(number.toString()),
       onPressed: () {

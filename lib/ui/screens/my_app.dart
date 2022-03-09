@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
                       alignment: Alignment.center,
                       padding: const EdgeInsets.all(8.0),
                       child: MaterialButton(
+                          key: Key("switch"),
                           height: double.infinity,
                           minWidth: double.infinity,
                           color: Color(

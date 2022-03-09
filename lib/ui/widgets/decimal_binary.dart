@@ -49,11 +49,11 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
                       child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Expanded(child: decimalKeyNumber(9)),
+                      Expanded(child: decimalKeyNumber("9")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(8)),
+                      Expanded(child: decimalKeyNumber("8")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(7)),
+                      Expanded(child: decimalKeyNumber("7")),
                     ],
                   )),
                   Padding(padding: const EdgeInsets.all(2.0)),
@@ -61,11 +61,11 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
                       child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Expanded(child: decimalKeyNumber(6)),
+                      Expanded(child: decimalKeyNumber("6")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(5)),
+                      Expanded(child: decimalKeyNumber("5")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(4)),
+                      Expanded(child: decimalKeyNumber("4")),
                     ],
                   )),
                   Padding(padding: const EdgeInsets.all(2.0)),
@@ -73,11 +73,11 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
                       child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Expanded(child: decimalKeyNumber(3)),
+                      Expanded(child: decimalKeyNumber("3")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(2)),
+                      Expanded(child: decimalKeyNumber("2")),
                       Padding(padding: const EdgeInsets.all(2.0)),
-                      Expanded(child: decimalKeyNumber(1)),
+                      Expanded(child: decimalKeyNumber("1")),
                     ],
                   )),
                   Padding(padding: const EdgeInsets.all(2.0)),
@@ -85,11 +85,12 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
                       child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Expanded(child: decimalKeyNumber(0)),
+                      Expanded(child: decimalKeyNumber("0")),
                       Padding(padding: const EdgeInsets.all(2.0)),
                       Expanded(
                         child: Container(
                           child: MaterialButton(
+                              key: Key("reset"),
                               color: Color(
                                   int.parse("#0069C0".replaceAll('#', '0xff'))),
                               onPressed: () {
@@ -119,9 +120,9 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
       onPressed: () {
         setState(() {
           if (_decimal == "0") {
-            _decimal = number.toString();
+            _decimal = number;
           } else {
-            _decimal = _decimal + number.toString();
+            _decimal = _decimal + number;
           }
           _binary = int.parse(_decimal, radix: 10).toRadixString(2);
         });
