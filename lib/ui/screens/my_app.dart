@@ -27,35 +27,41 @@ class _MyAppState extends State<MyApp> {
               title: Text('Converter'),
             ),
             body: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(alignment: Alignment.centerLeft, child: Text(title)),
-                Expanded(child: child),
                 Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.all(8.0),
-                    child: MaterialButton(
-                        color:
-                            Color(int.parse("#0069C0".replaceAll('#', '0xff'))),
-                        onPressed: () {
-                          setState(() {
-                            if (title == "Binary -> Decimal") {
-                              title = "Decimal -> Binary";
-                              child = DecimalBinary();
-                            } else if (title == "Decimal -> Binary") {
-                              title = "Binary -> Decimal";
-                              child = BinaryToDecimal();
-                            }
-                          });
-                        },
-                        child: Text("Switch",
-                            style: new TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.white,
-                            ))),
-                  ),
-                )
+                    flex: 1,
+                    child: Container(
+                        alignment: Alignment.centerLeft, child: Text(title))),
+                Expanded(flex: 10, child: Container(child: child)),
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                          height: double.infinity,
+                          minWidth: double.infinity,
+                          color: Color(
+                              int.parse("#0069C0".replaceAll('#', '0xff'))),
+                          onPressed: () {
+                            setState(() {
+                              if (title == "Binary -> Decimal") {
+                                title = "Decimal -> Binary";
+                                child = DecimalBinary();
+                              } else if (title == "Decimal -> Binary") {
+                                title = "Binary -> Decimal";
+                                child = BinaryToDecimal();
+                              }
+                            });
+                          },
+                          child: Text("Switch",
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.white,
+                              ))),
+                    ))
               ],
             )));
   }
