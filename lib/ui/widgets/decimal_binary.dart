@@ -115,8 +115,9 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
 
   Widget decimalKeyNumber(number) {
     return MaterialButton(
+      key: Key(number),
       color: Color(int.parse("#2FE058".replaceAll('#', '0xff'))),
-      child: Text(number.toString()),
+      child: Text(number),
       onPressed: () {
         setState(() {
           if (_decimal == "0") {
