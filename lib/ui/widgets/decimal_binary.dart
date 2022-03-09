@@ -9,7 +9,7 @@ class DecimalToBinary extends StatefulWidget {
 
 class _DecimalToBinaryState extends State<DecimalToBinary> {
   String _binary = "0";
-  String _decimal = "0";
+  String _decimal = "";
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class _DecimalToBinaryState extends State<DecimalToBinary> {
                               onPressed: () {
                                 setState(() {
                                   _binary = "0";
-                                  _decimal = "0";
+                                  _decimal = "";
                                 });
                               },
                               child: Text("Reset",

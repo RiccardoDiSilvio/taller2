@@ -6,7 +6,7 @@ class BinaryToDecimal extends StatefulWidget {
 }
 
 class _BinaryToDecimalState extends State<BinaryToDecimal> {
-  String _binary = "0";
+  String _binary = "";
   String _decimal = "0";
 
   void _onPressed() {}
@@ -63,7 +63,7 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
                           Color(int.parse("#0069C0".replaceAll('#', '0xff'))),
                       onPressed: () {
                         setState(() {
-                          _binary = "0";
+                          _binary = "";
                           _decimal = "0";
                         });
                       },
