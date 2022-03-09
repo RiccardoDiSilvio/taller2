@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DecimalBinary extends StatefulWidget {
-  DecimalBinary({Key? key}) : super(key: key);
+class DecimalToBinary extends StatefulWidget {
+  DecimalToBinary({Key? key}) : super(key: key);
 
   @override
-  State<DecimalBinary> createState() => _DecimalBinaryState();
+  State<DecimalToBinary> createState() => _DecimalToBinaryState();
 }
 
-class _DecimalBinaryState extends State<DecimalBinary> {
+class _DecimalToBinaryState extends State<DecimalToBinary> {
   String _binary = "0";
   String _decimal = "0";
 

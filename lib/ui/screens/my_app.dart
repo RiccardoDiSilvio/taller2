@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
                             setState(() {
                               if (title == "Binary -> Decimal") {
                                 title = "Decimal -> Binary";
-                                child = DecimalBinary();
+                                child = DecimalToBinary();
                               } else if (title == "Decimal -> Binary") {
                                 title = "Binary -> Decimal";
                                 child = BinaryToDecimal();
