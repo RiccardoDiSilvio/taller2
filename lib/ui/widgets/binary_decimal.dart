@@ -6,9 +6,8 @@ class BinaryToDecimal extends StatefulWidget {
 }
 
 class _BinaryToDecimalState extends State<BinaryToDecimal> {
-  String _binary = "11";
-  String _decimal =
-      "3"; // _decimal = int.parse(_binary, radix: 2).toRadixString(10);
+  String _binary = "0";
+  String _decimal = "0";
 
   void _onPressed() {}
 
@@ -30,18 +29,29 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
                           Color(int.parse("#FF5722".replaceAll('#', '0xff'))),
                       fontSize: 35),
                 )),
-            Text("3"),
-            Row(children: <Widget>[
-              keyNumber(1),
-              keyNumber(0),
-            ]),
+            Expanded(
+                child: Text("$_decimal",
+                    style: new TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.red,
+                    ))),
+            Expanded(
+                child: Row(children: <Widget>[
+              Expanded(child: binaryKeyNumber(1)),
+              Expanded(child: binaryKeyNumber(0)),
+            ])),
             Expanded(
               flex: 1,
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                     color: Color(int.parse("#0069C0".replaceAll('#', '0xff'))),
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _binary = "0";
+                        _decimal = "0";
+                      });
+                    },
                     child: Text("Reset",
                         style: new TextStyle(
                           fontSize: 20.0,
@@ -53,10 +63,19 @@ class _BinaryToDecimalState extends State<BinaryToDecimal> {
     );
   }
 
-  Widget keyNumber(number) {
+  Widget binaryKeyNumber(number) {
     return MaterialButton(
       child: Text(number.toString()),
-      onPressed: () {},
+      onPressed: () {
+        setState(() {
+          if (_binary == "0") {
+            _binary = number.toString();
+          } else {
+            _binary = _binary + number.toString();
+          }
+          _decimal = int.parse(_binary, radix: 2).toRadixString(10);
+        });
+      },
     );
   }
 }
